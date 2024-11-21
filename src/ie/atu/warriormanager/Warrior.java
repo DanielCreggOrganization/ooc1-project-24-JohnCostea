@@ -4,17 +4,15 @@ public class Warrior {
     //instance variables
     private int warriorId;  //unique ID
     private String warriorName;
-    private String warriorType;
     private int warriorDamage;
     private int warriorLife;
     private boolean isAlive;
     private double distanceToEnemy;
 
     //constructor
-    public  Warrior(int warriorId, String warriorName, String warriorType, int warriorDamage, int warriorLife, boolean isAlive, double distanceToEnemy){
+    public  Warrior(int warriorId, String warriorName, int warriorDamage, int warriorLife, boolean isAlive, double distanceToEnemy){
         this.warriorId = warriorId;
-        this.warriorName = warriorName;
-        this.warriorType = warriorType;
+        this.warriorName = warriorName;     
         this.warriorDamage = warriorDamage;
         this.warriorLife = warriorLife;
         this.isAlive = isAlive;
@@ -27,9 +25,6 @@ public class Warrior {
     }
     public String getWarriorName(){
         return this.warriorName;
-    }
-    public String getWarriorType(){
-        return this.warriorType;
     }
     public int getWarriorDamage(){
         return this.warriorDamage;
@@ -50,9 +45,6 @@ public class Warrior {
     public void setWarriorName(){
         this.warriorName = warriorName;
     }
-    public void setWarriorType(){
-        this.warriorType = warriorType;
-    }
     public void setWarriorDamage(){
         this.warriorDamage = warriorDamage;
     }
@@ -65,6 +57,4 @@ public class Warrior {
     public void setDistanceToEnemy(){
         this.distanceToEnemy = distanceToEnemy;
     }
-
-
 }
