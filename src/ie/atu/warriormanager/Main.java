@@ -11,7 +11,7 @@ public class Main {
 
         while(true){
             System.out.println("\n#####################################");
-            System.out.println("#             My RPG Game             #\n");
+            System.out.println("#             My RPG Game           5#");
             System.out.println("#####################################\n");
             System.out.println("(1) Create a warrior");
             System.out.println("(2) Get closer to enemy");
@@ -23,8 +23,9 @@ public class Main {
 
             if (userSelection == 5){
                 //Quit
+                System.out.println("Game closing... Bye");
                 userInput.close();
-                break;
+                break;                
             }// end if
         } //end while
     } // end main
