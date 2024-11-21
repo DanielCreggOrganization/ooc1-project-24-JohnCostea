@@ -10,6 +10,17 @@ public class Warrior {
     private boolean isAlive;
     private double distanceToEnemy;
 
+    //constructor
+    public  Warrior(int warriorId, String warriorName, String warriorType, int warriorDamage, int warriorLife, boolean isAlive, double distanceToEnemy){
+        this.warriorId = warriorId;
+        this.warriorName = warriorName;
+        this.warriorType = warriorType;
+        this.warriorDamage = warriorDamage;
+        this.warriorLife = warriorLife;
+        this.isAlive = isAlive;
+        this.distanceToEnemy = distanceToEnemy;
+    }
+
     //getter and setter Methods
     public int getWarriorId(){
         return this.warriorId;
@@ -54,4 +65,6 @@ public class Warrior {
     public void setDistanceToEnemy(){
         this.distanceToEnemy = distanceToEnemy;
     }
+
+
 }
