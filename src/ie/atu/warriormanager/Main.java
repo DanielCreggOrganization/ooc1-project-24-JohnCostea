@@ -7,11 +7,12 @@ public class Main {
 
         Warrior w1 = new Warrior(101, "Max", 15, 100, true, 50.0);
 
-        System.out.println(w1.getWarriorName() + " has " + w1.getWarriorLife() + " life");
+        System.out.println(w1.getPlayerName() + " has " + w1.getPlayerLife() + " life");
 
         while(true){
             System.out.println("\n#####################################");
             System.out.println("#             My RPG Game            #");
+            System.out.println("#              Main Menu             #");
             System.out.println("#####################################\n");
             System.out.println("(1) Create a warrior");
             System.out.println("(2) Get closer to enemy");
@@ -25,7 +26,10 @@ public class Main {
                 //Quit
                 System.out.println("Game closing... Bye");
                 userInput.close();
-                break;                
+                break;
+            }
+            else if (userSelection == 1){
+                System.out.println("Please enter a ");          
             }// end if
         } //end while
     } // end main
