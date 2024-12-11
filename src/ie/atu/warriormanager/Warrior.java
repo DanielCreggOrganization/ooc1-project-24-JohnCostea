@@ -16,4 +16,12 @@ public class Warrior extends Player{
     public void setDistanceToEnemy(){
         this.distanceToEnemy = distanceToEnemy;
     }
+
+    public void sayMotto(){
+        System.out.println("I'll kill you!!!");
+    }
+    
+    public void defend(){
+        System.out.println("Taking out a shield!!");
+    }
 }

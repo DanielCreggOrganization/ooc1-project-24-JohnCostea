@@ -1,6 +1,6 @@
 package ie.atu.warriormanager;
 
-public class Player {
+public abstract class Player {
     //instance variables
     private int playerId;  //unique ID
     private String playerName;
@@ -40,4 +40,11 @@ public class Player {
     public void setIsAlive(){
         this.isAlive = isAlive;
     }
+
+    public abstract void sayMotto();
+    
+    public void defend(){
+        System.out.println("Please leave me alone!!");
+    }
+
 }
