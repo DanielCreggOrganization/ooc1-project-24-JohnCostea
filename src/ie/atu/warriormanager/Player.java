@@ -25,19 +25,19 @@ public abstract class Player {
         return this.isAlive;
     }
 
-    public void setPlayerId(){
+    public void setPlayerId(int playerId){
         this.playerId = playerId;
     }
-    public void setPlayerName(){
+    public void setPlayerName(String playerName){
         this.playerName = playerName;
     }
-    public void setPlayerDamage(){
+    public void setPlayerDamage(int playerDamage){
         this.playerDamage = playerDamage;
     }
-    public void setPlayerLife(){
+    public void setPlayerLife(int playerLife){
         this.playerId = playerLife;
     }
-    public void setIsAlive(){
+    public void setIsAlive(boolean isAlive){
         this.isAlive = isAlive;
     }
 

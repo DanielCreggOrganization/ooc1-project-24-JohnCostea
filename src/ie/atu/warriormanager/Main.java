@@ -6,9 +6,8 @@ public class Main {
         Scanner userInput = new Scanner(System.in);
         ArraysClass aco = new ArraysClass();
         
-        Enemy E1 = new Enemy(102, "Destroyer", 30, 100, true, 20);
+        Enemy E1 = new Enemy(102, "Destroyer", 30, 100, true, 80);
         
-
         while(true){
             System.out.println("\n#####################################");
             System.out.println("#             My RPG Game            #");
@@ -30,11 +29,19 @@ public class Main {
                 break;
             }
             else if (userSelection == 1){
-                System.out.println("Please enter a ");
-                Warrior w1 = new Warrior(101, "Max", 15, 100, true, 50.0);
-                aco.warriors[0]= w1;
-                System.out.println(w1.getPlayerName() + " has " + w1.getPlayerLife() + " life");          
-            }// end if
-        } //end while
-    } // end main
+                Warrior W1 = new Warrior();
+                System.out.println("Please enter a name for your Warrior: ");                       
+                                String userNameChoice = userInput.nextLine();                   
+                                W1.setPlayerName(userNameChoice);
+                                userInput.close();
+                System.out.println("Please enter life  for your Warrior(a number from 50 to 100): ");
+                                userSelection = userInput.nextInt();
+                                W1.setPlayerLife(userSelection);                
+                                userInput.close();                             
+                                System.out.println(W1.getPlayerName() + " has " + W1.getPlayerLife() + " life");          
+                                }// end if
+                } //end while
+                                                    
+                                
+        } // end main
 } //end of main class

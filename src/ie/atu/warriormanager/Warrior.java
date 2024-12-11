@@ -4,7 +4,9 @@ public class Warrior extends Player{
     //instance variables
         private double distanceToEnemy;
 
-    //constructor
+    //constructors
+    public Warrior(){       
+    }   
     public  Warrior(int playerId, String playerName, int playerDamage, int playerLife, boolean isAlive, double distanceToEnemy){
         this.distanceToEnemy = distanceToEnemy;
     }
