@@ -35,12 +35,13 @@ public abstract class Player {
         this.playerDamage = playerDamage;
     }
     public void setPlayerLife(int playerLife){
-        this.playerId = playerLife;
+        this.playerLife = playerLife;
     }
     public void setIsAlive(boolean isAlive){
         this.isAlive = isAlive;
     }
 
+    //adding an abstract method
     public abstract void sayMotto();
     
     public void defend(){

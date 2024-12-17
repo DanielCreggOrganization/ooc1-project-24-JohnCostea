@@ -8,7 +8,7 @@ public class Main {
 
         int userSelection = 0;
         Scanner userInput = new Scanner(System.in);
-        Enemy E1 = new Enemy(102, "Destroyer", 30, 100, true, 80);
+        Enemy E1 = new Enemy(999, "Destroyer", 30, 100, true, 80);
         
         while(true){          
             System.out.println("\n#####################################");
@@ -31,24 +31,31 @@ public class Main {
                 break;              
             }
             else if (userSelection == 1){
+                Warrior W1 = new Warrior();
                 
-                System.out.println("Please enter an ID for your Warrior: ");                  
-                int playerId = userInput.nextInt();
-                System.out.println("Please enter a name for your Warrior: ");
-                String playerName = userInput.next();
-                System.out.println("Please enter the damage for your Warrior is going to inflict: ");
-                int playerDamage = userInput.nextInt();
-                System.out.println("Please enter the total life points for your Warrior: ");
-                int playerLife = userInput.nextInt();                
-                System.out.println("Please enter the total life points for your Warrior: ");
-                double distanceToEnemy = userInput.nextDouble();
-                boolean isAlive = true;
+                System.out.println("Please enter an ID number for your Warrior: ");
+                W1.setPlayerId(userInput.nextInt());                
 
-                Warrior W1 = new Warrior(playerId, playerName, playerDamage, playerLife, isAlive, distanceToEnemy);
+                System.out.println("Please enter a name for your Warrior: ");
+                W1.setPlayerName(userInput.next());  
+                
+                System.out.println("Please enter the damage " + W1.getPlayerName() + " is going to inflict to the enemy: ");
+                W1.setPlayerDamage(userInput.nextInt());
+                W1.setPlayerLife(100);
+                W1.setDistanceToEnemy(120.00);
+                W1.setIsAlive(true);
+                
+                //Warrior W1 = new Warrior(W1.getPlayerId(), W1.getPlayerName(), W1.getPlayerDamage(), W1.getPlayerLife(), W1.getIsAlive(), W1.getDistanceToEnemy());
+                
                 warriorManagerObject.addWarrior(W1);
 
-            System.out.println("You just added a new warrior with ID"+ W1.getPlayerId() + " and the name " + W1.getPlayerName() + " has " + W1.getPlayerLife() + " life");          
-            }// end if
+                System.out.println("You just added a new warrior with ID "+ W1.getPlayerId() + " and the name " + W1.getPlayerName() + ". He has " + W1.getPlayerDamage() + " damage " + " and a distance to the enemy of " + W1.getDistanceToEnemy() +" metres.");          
+                }
+                else if (userSelection == 2){
+                    //WarriorManager.checkAliveWarriors();
+                    WarriorManager.totalWarriors();
+                }
+                // end if
             } //end while                                                                                    
         } // end main
 } //end of main class

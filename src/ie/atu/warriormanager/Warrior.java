@@ -15,7 +15,7 @@ public class Warrior extends Player{
     public double getDistanceToEnemy(){
         return this.distanceToEnemy;
     }
-    public void setDistanceToEnemy(){
+    public void setDistanceToEnemy(double distanceToEnemy){
         this.distanceToEnemy = distanceToEnemy;
     }
 
