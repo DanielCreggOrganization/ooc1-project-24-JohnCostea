@@ -42,14 +42,8 @@ Find total items: The number of warriors can be checked.
 Search Items: Searching can be done by checking for warriors' statuses.
 Quit: Exit option is provided in the main menu.
 
-**Code compiles successfully.**
-
-Consistent code formatting: The code is consistently formatted throughout the project.
-Comments: Every class, method, and variable is commented to explain its functionality.
-No grammar or spelling mistakes: The documentation and commentary are free from spelling or grammar issues.
 
 **Project Requirements**
-The project goes beyond the basic requirements in the following ways:
 
 Enemy Interaction: Warriors can attack the enemy, and the enemy can counterattack. This adds complexity to the game mechanics.
 Dynamic Warrior Movement: The warriors can move closer to the enemy to get within attack range, adding strategic depth to the gameplay.
@@ -77,29 +71,20 @@ WarriorManager:
 **Manages an array of warriors.**
 Methods: addWarrior() to add a new warrior, checkAliveWarriors() to display all alive warriors, getCloserToEnemy() to move warriors closer to the enemy, and attackEnemy() to execute the attack on the enemy and handle counterattacks.
 
-UtilMethods:
+UtilMethods: Provides utility methods like displayText() to display text slowly, simulating a more immersive, old type of RPG, experience.
 
-Provides utility methods like displayText() to display text slowly, simulating a more immersive, old type of RPG, experience.
+Main: The entry point of the application. Displays the main menu and handles user input to create warriors, check warrior status, move closer to the enemy, and attack the enemy.
 
-Main:
-
-The entry point of the application. Displays the main menu and handles user input to create warriors, check warrior status, move closer to the enemy, and attack the enemy.
 Methods:
-displayText(String text, int delay) (in UtilMethods):
+displayText(String text, int delay) (in UtilMethods): Displays text one character at a time with a delay between each character to create a more immersive effect.
 
-Displays text one character at a time with a delay between each character to create a more immersive effect.
-addWarrior(Warrior warrior) (in WarriorManager):
+addWarrior(Warrior warrior) (in WarriorManager): Adds a new warrior to the warriors array.
 
-Adds a new warrior to the warriors array.
-checkAliveWarriors() (in WarriorManager):
+checkAliveWarriors() (in WarriorManager): Displays all the alive warriors and their remaining life.
 
-Displays all the alive warriors and their remaining life.
-getCloserToEnemy() (in WarriorManager):
+getCloserToEnemy() (in WarriorManager): Moves the warriors closer to the enemy by reducing their distance to the enemy.
 
-Moves the warriors closer to the enemy by reducing their distance to the enemy.
-attackEnemy(Enemy enemy) (in WarriorManager):
-
-Executes the warrior's attack on the enemy and handles the enemy's counterattack.
+attackEnemy(Enemy enemy) (in WarriorManager): Executes the warrior's attack on the enemy and handles the enemy's counterattack.
 
 # Roadblocks and Unfinished Functionality
 Issues Faced:
@@ -109,12 +94,10 @@ Distance Checks: Ensuring that warriors could only attack when within a specific
 
 Possible Solutions:
 
-Further Testing:
- Conducting additional tests for various interactions, especially edge cases like warriors with 0 life or enemies that counterattack multiple times.
-Refining Game Logic:
- Adding more game mechanics like healing potions, multiple enemies, or special moves would enhance the game experience.
-What Would Be Done Differently:
+Further Testing: Conducting additional tests for various interactions, especially edge cases like warriors with 0 life or enemies that counterattack multiple times.
+Refining Game Logic: Adding more game mechanics like healing potions, multiple enemies, or special moves would enhance the game experience.
 
+What Would Be Done Differently:
 Additional Features: 
 I would have included more features like inventory management or experience points for warriors.
 UI Enhancement: Adding more detailed text formatting or even a GUI would make the game more interactive.
