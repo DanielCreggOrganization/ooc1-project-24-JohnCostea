@@ -49,8 +49,8 @@ public class WarriorManager {
         // Loop through all warriors to reduce their distance to the enemy
         for (Warrior warrior : warriors) {
             if (warrior != null && warrior.getIsAlive()) {
-                // Reduce the distance to the enemy by 10
-                warrior.setDistanceToEnemy(warrior.getDistanceToEnemy() - 10);
+                // Reduce the distance to the enemy by 20
+                warrior.setDistanceToEnemy(warrior.getDistanceToEnemy() - 20);
                 // Display the updated distance of the warrior
                 UtilMethods.displayText(warrior.getPlayerName() + " moved closer to the enemy. Distance now: " + warrior.getDistanceToEnemy(), 25);
                 movedCloser = true; // Mark that a warrior has moved closer

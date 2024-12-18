@@ -47,8 +47,26 @@ public class Main {
                     warriorManager.getCloserToEnemy(); // Method to make warriors get closer to the enemy
                     break;
                 case 4: // If the user selects option 4, attack the enemy
-                    warriorManager.attackEnemy(enemy);  // Calling the attackEnemy method from WarriorManager
+                    // Check if any warrior is within attack range (distance has to be < 20)
+                    boolean canAttack = false; // Initialize a flag to determine if any warrior can attack
+                
+                    // Loop through all the warriors in the WarriorManager to check if any are in range
+                    for (Warrior warrior : warriorManager.getWarriors()) {
+                        if (warrior != null && warrior.getIsAlive() && warrior.getDistanceToEnemy() < 20) {
+                            canAttack = true; // If a warrior is alive and within attack range (distance < 20), set canAttack to true
+                            break; // Exit the loop as we've found a warrior in range
+                        }
+                    }
+                
+                    // If a warrior is within range to attack, proceed with attacking the enemy
+                    if (canAttack) {
+                        warriorManager.attackEnemy(enemy);  // Call the attackEnemy method from WarriorManager to attack the enemy
+                    } else {
+                        // If no warrior is within range, notify the player that they need to move closer
+                        UtilMethods.displayText("The warrior is NOT within range to attack the enemy! Move closer.", 25);
+                    }
                     break;
+                
                 case 5: // If the user selects option 5, quit the game
                     UtilMethods.displayText("Game closing... Bye", 25); // Display message before quitting
                     userInput.close(); // Close the Scanner object to prevent resource leak
@@ -77,15 +95,15 @@ public class Main {
 
         // Setting default values for the warrior's health, distance to enemy, and status
         warrior.setPlayerLife(100);  // Setting the warrior's life to 100
-        warrior.setDistanceToEnemy(120.0); // Setting the distance from the enemy to 120 meters
+        warrior.setDistanceToEnemy(50.0); // Setting the distance from the enemy to 120 meters
         warrior.setIsAlive(true); // The warrior is alive when created
 
         // Adding the newly created warrior to the WarriorManager
         warriorManager.addWarrior(warrior);
 
         // Displaying a message to confirm the warrior creation
-        UtilMethods.displayText("New warrior created with the name " + warrior.getPlayerName() + 
-            " with ID: " + warrior.getPlayerId(), 25);
+        UtilMethods.displayText("New warrior ID "  + warrior.getPlayerId() + " created with the name " + warrior.getPlayerName() + 
+            " ,damage " + warrior.getPlayerDamage(), 25);
 
         // Using the overridden sayMotto method to display the warrior's motto
         warrior.sayMotto();
