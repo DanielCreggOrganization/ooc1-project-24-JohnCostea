@@ -1,52 +1,120 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=17263231)
 # OOC1 Project
 
-**Title:** Items Application Manager  
-**Name:** Patrick Murphy  
-**Student ID:** G00123456  
+**Title:** Simple Text RPG Game 
 
-## Application Function
+**Name:** Ionut Costea  
 
-Discuss what the application does.
+**Student ID:** G00440022  
 
-## Running the Application
+# Application Function
+This application is a simple text-based RPG game that allows users to create and manage warriors, engage in combat with an enemy, and track the warrior's distance to the enemy and remaining life. 
+The game also allows users to view their warriors' status and move closer to enemies before engaging in battle. 
+Warriors can only attack enemies if they are within range (distance < 20). The enemy also counterattacks once a warrior attacks.
 
-Provide step by step instructions on how to run your applicaiton. Are there any prerequisite softwares required?
+# Running the Application
+To run the application:
 
-```list
-List the instructions step by step
-    1. Go to the Main class and press execute
-    2. Do something else
-            :
-            :
-```
+Clone or download the project repository from the provided GitHub Classroom link.
+Open the project in your IDE (such as IntelliJ IDEA, Eclipse, or VS Code).
+Navigate to the Main class.
+Press Run or Execute on the Main class to start the application.
+The game will display a menu with several options (such as creating a warrior, moving closer to an enemy, or attacking the enemy).
+Use the menu to interact with the game:
+Create a warrior: Enter a name, ID, and damage for your warrior.
+Show alive warriors: Check which warriors are still alive.
+Move closer to the enemy: Get your warriors within attack range (distance < 20).
+Attack enemy: If within range, attack the enemy.
+Continue playing or exit the game.
+Prerequisite Software:
+Java JDK 11 or higher should be installed.
+An IDE like IntelliJ IDEA, Eclipse, or VS Code.
+Minimum Project Requirements
+This project meets all the minimum project requirements, including:
 
-## Minimum Project Requirements
+Repository contains commits: Multiple commits were made every week, tracking progress throughout the development process.
+Project fully contained in the provided GitHub Classroom repository.
+Required methods (Add Item, Remove Item, Update Item, Find total items, Search Items, Quit):
+Add Item: Implemented by adding a warrior.
+Remove Item: Not explicitly required but can be inferred by managing warriors and enemies.
+Update Item: Warrior attributes like life and damage can be updated.
+Find total items: The number of warriors can be checked.
+Search Items: Searching can be done by checking for warriors' statuses.
+Quit: Exit option is provided in the main menu.
 
-Describe how you have met all minimum project requirements below:
+**Code compiles successfully.**
 
-* The repository contains, at minimum, two commits per week (Note: There should be many commits per day coding).
-* The project, including code and documentation, is fully contained in the provided GitHub Classroom repository.
-* Methods = Add Item, Remove Item, Update Item, Find total items, Search Items and Quit.
-* The code MUST compile.
-* The application code must be formatted in a consistent and standard way.
-* The code must contain comments. One comment per class, method and variable at minimum.
-* The documentation and commentary must be free of a grammar and speling mistakes.
+Consistent code formatting: The code is consistently formatted throughout the project.
+Comments: Every class, method, and variable is commented to explain its functionality.
+No grammar or spelling mistakes: The documentation and commentary are free from spelling or grammar issues.
 
-## Project Requirements above and beyond
+**Project Requirements**
+The project goes beyond the basic requirements in the following ways:
 
-Discuss any application features or design elements that show you went above and beyond basic requirements.
+Enemy Interaction: Warriors can attack the enemy, and the enemy can counterattack. This adds complexity to the game mechanics.
+Dynamic Warrior Movement: The warriors can move closer to the enemy to get within attack range, adding strategic depth to the gameplay.
+Distance Check for Attacks: Warriors can only attack if they are within a specific range (distance < 20). This feature introduces an element of strategy where players must plan their movement before attacking.
+Real-Time Interaction: Text is displayed slowly to create a more immersive experience, simulating a more interactive environment.
 
-## Application Architecture
+# Application Architecture
+Classes and Purpose:
+Player:
 
-Discuss in detail how the application is structured. List all classes and describe their purpose. List all methods and describe what they do.
+The base class for both the Warrior and Enemy. It defines common properties such as player ID, name, life, damage, and whether the player is alive.
+Methods: Getters and setters for player attributes. An abstract sayMotto method for subclass-specific behavior, and a defend method for defense actions.
+Warrior (inherits from Player):
 
-## Roadblocks and Unfinished Functionality
+Represents a warrior that can engage in combat with enemies.
+Attributes: Includes distanceToEnemy to track how far the warrior is from the enemy.
+Methods: sayMotto() to display the warrior's battle cry, defend() to represent the warrior's defense mechanism, and other basic methods inherited from Player.
+Enemy (inherits from Player):
 
-What did you not get finished? Discuss the issues you faced when creating your application Provide possible solutions to these issues. What would you have done differently if you had to do this project again?
+Represents the enemy the player must fight.
+Attributes: Includes stabDamage to define the damage an enemy can inflict on the warrior.
+Methods: sayMotto() for the enemy's taunt and defend() to represent enemy defense.
+WarriorManager:
 
-## Resources
+**Manages an array of warriors.**
+Methods: addWarrior() to add a new warrior, checkAliveWarriors() to display all alive warriors, getCloserToEnemy() to move warriors closer to the enemy, and attackEnemy() to execute the attack on the enemy and handle counterattacks.
 
-Provide links to resources used:
+UtilMethods:
 
-* [Tutorialspoint](https://www.tutorialspoint.com/java/) - Java Tutorials site I found helpful
+Provides utility methods like displayText() to display text slowly, simulating a more immersive, old type of RPG, experience.
+
+Main:
+
+The entry point of the application. Displays the main menu and handles user input to create warriors, check warrior status, move closer to the enemy, and attack the enemy.
+Methods:
+displayText(String text, int delay) (in UtilMethods):
+
+Displays text one character at a time with a delay between each character to create a more immersive effect.
+addWarrior(Warrior warrior) (in WarriorManager):
+
+Adds a new warrior to the warriors array.
+checkAliveWarriors() (in WarriorManager):
+
+Displays all the alive warriors and their remaining life.
+getCloserToEnemy() (in WarriorManager):
+
+Moves the warriors closer to the enemy by reducing their distance to the enemy.
+attackEnemy(Enemy enemy) (in WarriorManager):
+
+Executes the warrior's attack on the enemy and handles the enemy's counterattack.
+
+# Roadblocks and Unfinished Functionality
+Issues Faced:
+Enemy Interaction: Implementing a counterattack for the enemy required careful tracking of both warrior and enemy life.
+
+Distance Checks: Ensuring that warriors could only attack when within a specific range (distance < 20) required an additional check in the main menu logic.
+
+Possible Solutions:
+
+Further Testing:
+ Conducting additional tests for various interactions, especially edge cases like warriors with 0 life or enemies that counterattack multiple times.
+Refining Game Logic:
+ Adding more game mechanics like healing potions, multiple enemies, or special moves would enhance the game experience.
+What Would Be Done Differently:
+
+Additional Features: 
+I would have included more features like inventory management or experience points for warriors.
+UI Enhancement: Adding more detailed text formatting or even a GUI would make the game more interactive.
